@@ -276,6 +276,9 @@ public class TiUISlider extends TiUIView
 	}
 
 	public void onStartTrackingTouch(SeekBar seekBar) {
+		KrollDict data = new KrollDict();
+		data.put(TiC.PROPERTY_VALUE, scaledValue());
+		proxy.fireEvent(TiC.EVENT_START, data);
 	}
 
 	public void onStopTrackingTouch(SeekBar seekBar) {
